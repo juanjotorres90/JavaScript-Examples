@@ -6,7 +6,7 @@ Vamos a construir un ecommerce. Donde podamos
 - Añadir unidades de un producto determinado
 
 En esta tercera parte, haremos:
-1. Implementar dos botones que añadan producto 1 o 2 a u array
+1. Implementar dos botones que añadan producto 1 o 2 a un array
    favoriteProducts
 2. Hacer que no se pueda eliminar del carrito de la compra un
    producto favorito
@@ -68,9 +68,9 @@ var shoppingCart = {
     resetShoppingCart: function () {
         for (var i = 0; i < this.products.length; i++) {
         if (this.products[i].favorite === true) {
-            this.products;
-            console.log("El carrito queda así:", this.products);
-            console.log("El producto favorito que no se puede eliminar es:", this.products[i]);
+            this.products = this.products[i]
+            console.log("El carrito se vació pero mantiene los productos favoritos:", this.products);
+            console.log("El producto favorito que no se puede eliminar es:", this.products);
             return;
         }
     }
