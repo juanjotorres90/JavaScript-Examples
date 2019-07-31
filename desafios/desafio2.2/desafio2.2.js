@@ -35,6 +35,8 @@ var socialNetwork = function (name, arrayLikes, importance, numberOfUsers) {
   }
 };
 
+
+
 var facebook = new socialNetwork('Facebook',[201, 245, 500, 650, 1103, 347],0.8,14530);
 var instagram = new socialNetwork('Instagram',[303, 21, 124, 150, 23, 31],0.6,230);
 var twitter = new socialNetwork('Twitter',[205, 518, 1123, 4350, 233, 3431],0.4,3230);
@@ -43,7 +45,63 @@ facebook.calcLikes();
 instagram.calcLikes();
 twitter.calcLikes();
 
+
+// Sin prototype
+console.log(facebook);
+console.log(instagram);
+console.log(twitter);
+
 facebook.calcAverage();
 instagram.calcAverage();
 twitter.calcAverage();
 
+
+
+
+//! 4.
+
+var socialNetwork = function (name, arrayLikes, importance, numberOfUsers) {
+  this.name = name;
+  this.arrayLikes = arrayLikes;
+  this.importance = importance;
+  this.numberOfUsers = numberOfUsers;
+}
+
+socialNetwork.prototype.calcLikes = function () {
+  let sum = 0;
+  for (let i= 0; i< this.arrayLikes.length; i++) {
+     sum += this.arrayLikes[i];
+  }
+  console.log("La suma de likes de "+ this.name + " es:", sum);
+};
+
+socialNetwork.prototype.calcAverage = function() {
+  let sum = 0;
+  let average = 0;
+  for (let i= 0; i< this.arrayLikes.length; i++) {
+     sum += this.arrayLikes[i];
+  }
+  average = sum/this.arrayLikes.length;
+  console.log("La media de likes de "+ this.name + " es:", average);
+}
+
+var facebook = new socialNetwork('Facebook',[201, 245, 500, 650, 1103, 347],0.8,14530);
+var instagram = new socialNetwork('Instagram',[303, 21, 124, 150, 23, 31],0.6,230);
+var twitter = new socialNetwork('Twitter',[205, 518, 1123, 4350, 233, 3431],0.4,3230);
+
+console.log(facebook);
+console.log(instagram);
+console.log(twitter);
+
+facebook.calcLikes();
+facebook.calcAverage();
+instagram.calcLikes();
+instagram.calcAverage();
+twitter.calcLikes();
+twitter.calcAverage();
+
+
+// Con prototype
+console.log(facebook);
+console.log(instagram);
+console.log(twitter);
