@@ -1,6 +1,6 @@
 /*
 Vamos a construir un juego de test en la consola!
-1. Construir un constructor Question que describa la pregunta. Debde incluir:
+1. Construir un constructor Question que describa la pregunta. Debe incluir:
 - question
 - array de answers (u objeto)
 - respuesta correcta
@@ -11,17 +11,29 @@ Vamos a construir un juego de test en la consola!
 6. Crear un método mediante prototype que corriga la respuesta e indique si hemos acertado o no.
 */
 
+//! 1.
+
 var Question = function (question, arrAnswers, correctAnswer) {
     this.question = question;
     this.arrAnswers = arrAnswers;
     this.correctAnswer = correctAnswer;
 }
 
-var question1 = new Question('¿Cuántas copas del Rey tiene el RCDE?', [9, 4, 1], 4);
+//! 2.
+
+var question1 = new Question('¿Cuántas copas del Rey tiene el RCD Espanyol de Barcelona?', [9, 4, 1], 4);
 var question2 = new Question('¿De qué fruta se obtiene la copra?', ['Coco', 'Piña', 'Cereza'], 'Coco');
 var question3 = new Question('¿De qué Estado norteamericano es capital Indianápolis?', ['Montana', 'Ohio', 'Indiana'], 'Indiana');
+var question4 = new Question('¿Cuál es el planeta más alejado del Sol?', ['Saturno', 'Venus', 'Plutón'], 'Plutón');
 
-var questions = [question1, question2, question3];
+
+//! 3.
+
+var questions = [question1, question2, question3, question4];
+
+
+
+//! 4.
 
 Question.prototype.displayQuestion = function() {
     console.log(this.question);
@@ -31,7 +43,13 @@ Question.prototype.displayQuestion = function() {
 var n = Math.floor(Math.random() * questions.length);
 questions[n].displayQuestion();
 
+
+//! 5.
+
 var userAnswer = prompt("Escribe la respuesta correcta:");
+
+
+//!6.
 
 Question.prototype.checkAnswer = function () {
     if (userAnswer == this.correctAnswer) {

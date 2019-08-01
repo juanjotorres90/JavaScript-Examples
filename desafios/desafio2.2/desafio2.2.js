@@ -25,6 +25,7 @@ var socialNetwork = function (name, arrayLikes, importance, numberOfUsers) {
     console.log("La suma de likes de "+ this.name + " es:", sum);
   };
   this.calcAverage = function () {
+    // this.calcLikes();
     let sum = 0;
     let average = 0;
     for (let i= 0; i< this.arrayLikes.length; i++) {

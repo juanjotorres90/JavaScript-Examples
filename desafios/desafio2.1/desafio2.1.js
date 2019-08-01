@@ -37,3 +37,20 @@ calcTomillo(200);
 agePlants('pino')(100);
 agePlants('abeto')(300,100);
 agePlants('tomillo')(200);
+
+
+// Adding prompt
+
+var userPlant = prompt("Por favor, escribe el tipo de planta para calcular edad");
+
+if (userPlant == 'pino') {
+        var diametro = parseInt(prompt("Por favor, especifique el diametro del pino"));
+        agePlants(userPlant)(diametro);
+    } else if (userPlant == 'abeto') {
+        var diametro = parseInt(prompt("Por favor, especifique el diametro del abeto"));
+        var altura = parseInt(prompt("Por favor, especifique la altura del abeto"));
+        agePlants(userPlant)(altura,diametro);
+    } else if (userPlant == 'tomillo') {
+        var altura = parseInt(prompt("Por favor, especifique la altura del tomillo"));
+        agePlants(userPlant)(altura);
+    }
