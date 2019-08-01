@@ -18,7 +18,7 @@
 */
 
 
-//! 2. Prueba de reclaración
+//! 2. Prueba de redeclaración
 
 var temp = "this is a temp variable";
 var temp = "this is a second temp variable";
