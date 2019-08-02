@@ -1,6 +1,6 @@
 /*
 Vamos a construir un juego de test en la consola!
-1. Construir un constructor Question que describa la pregunta. Debe incluir:
+1. Crear un constructor Question que describa la pregunta. Debe incluir:
 - question
 - array de answers (u objeto)
 - respuesta correcta
